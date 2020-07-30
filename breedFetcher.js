@@ -3,11 +3,15 @@ const input = process.argv[2];
 
 const host = "https://api.thecatapi.com/v1/breeds/search";
 const searchURL = host.concat("?q=", input);
-console.log(searchURL);
+const noBreedError = "Sorry! We haven't encounter them yet! \nWe will continue our search\nInto the outer space .....🛸🛸🛸🛸"
 
 request(searchURL, (error, response, body) => {
   const data = JSON.parse(body);
-  write(data);
+  if (!data[0]) {
+    console.log(noBreedError);
+  } else {
+    write(data);
+  }
 });
 
 const write = objData => {
