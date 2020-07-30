@@ -1,8 +1,11 @@
 const request = require("request");
+const input = process.argv[2];
 
-let breedInfo;
+const host = "https://api.thecatapi.com/v1/breeds/search";
+const searchURL = host.concat("?q=", input);
+console.log(searchURL);
 
-request("https://api.thecatapi.com/v1/breeds/search?q=Siberian", (error, response, body) => {
+request(searchURL, (error, response, body) => {
   const data = JSON.parse(body);
   write(data);
 });
