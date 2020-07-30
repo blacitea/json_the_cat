@@ -11,7 +11,7 @@ request(searchURL, (error, response, body) => {
 });
 
 const write = objData => {
-  console.log(objData[0]);
+  console.log(objData[0].description);
 };
 
 
