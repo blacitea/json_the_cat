@@ -12,7 +12,7 @@ const fetchBreedDescription = function (breedName, callback, host = "https://api
       if (!data[0]) {
         callback(noBreedError);
       } else {
-        callback(null, data[0].description);
+        callback(null, data[0].description.trim());
       }
     }
   });

@@ -6,7 +6,6 @@ describe("#FetchBreedDesc", () => {
     fetchBreedDescription('Siberian', (err, desc) => {
       // happy case, shouldn't have error
       assert.equal(err, null);
-
       const expectedDesc = "The Siberians dog like temperament and affection makes the ideal lap cat and will live quite happily indoors. Very agile and powerful, the Siberian cat can easily leap and reach high places, including the tops of refrigerators and even doors.";
       assert.equal(desc, expectedDesc);
       done();
@@ -17,11 +16,8 @@ describe("#FetchBreedDesc", () => {
     fetchBreedDescription('York Chocolate', (err, desc) => {
       // happy case, shouldn't have error
       assert.equal(err, null);
-
       const expectedDesc = "York Chocolate cats are known to be true lap cats with a sweet temperament. They love to be cuddled and petted. Their curious nature makes them follow you all the time and participate in almost everything you do, even if it's related to water: unlike many other cats, York Chocolates love it.";
-      console.log(typeof (desc));
       assert.equal(expectedDesc, desc);
-
       done();
     });
   });
@@ -30,7 +26,6 @@ describe("#FetchBreedDesc", () => {
       const expectedError = "Sorry! We haven't encounter them yet! \nWe will continue our search\nInto the outer space .....🛸🛸🛸🛸";
       assert.equal(err, expectedError);
       assert.equal(desc, null);
-
       done();
     });
   });
@@ -39,7 +34,6 @@ describe("#FetchBreedDesc", () => {
       const expectedError = "Oops! The path to the cathouse was interupted by dogs!\n🐕  🐩  🐕  🐩\nFind and use a new path!\n 🐱 🐾 🐱 🐾 ";
       assert.equal(err, expectedError);
       assert.equal(desc, null);
-
       done();
     }, "www.gogo.hk");
   });
